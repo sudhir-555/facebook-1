@@ -1,0 +1,10 @@
+package selenium.practice;
+
+public class MyPracticeMousehover {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

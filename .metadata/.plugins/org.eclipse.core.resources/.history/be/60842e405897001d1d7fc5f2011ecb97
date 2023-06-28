@@ -1,0 +1,39 @@
+package com.Facebook1.testcases;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.Facebook1.basepage.Facebook1basepage;
+import com.Facebook1.objectpage.PO_Facebook1LoginPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class VerifyLoginTest {
+	public static WebDriver driver;
+	
+	public void init()
+	{
+		Facebook1basepage base=new Facebook1basepage(driver);
+		base.init(); 
+	}
+	@Test(description = "Verify Login Test")
+	public void VerifyLogin()
+	{
+		PO_Facebook1LoginPage VerifyLoginTest=new PO_Facebook1LoginPage(driver);
+		VerifyLoginTest.VerifyLogin();
+	}
+	@AfterMethod
+	public void tearDown()
+	{
+		//driver.quit();
+	}
+	}
+	
+
+

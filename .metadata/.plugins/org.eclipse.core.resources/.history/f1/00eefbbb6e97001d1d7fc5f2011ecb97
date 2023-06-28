@@ -1,0 +1,28 @@
+package com.rediff.pageobject;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.rediff.basepage.basepage;
+
+public class CreatAccountPage extends  basepage  {
+	
+	@FindBy(xpath = "//a[@title='Create Rediffmail Account']")
+	private WebElement CreateAccount;
+	
+public CreatAccountPage()
+    {
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+	}
+public void ClickCreatAccount()
+{
+	CreateAccount.click();
+	}
+
+public void VerifyCreatAccount()
+{
+	ClickCreatAccount();	
+	}
+}

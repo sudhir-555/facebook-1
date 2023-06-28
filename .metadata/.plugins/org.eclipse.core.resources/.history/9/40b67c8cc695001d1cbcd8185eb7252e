@@ -1,0 +1,143 @@
+package rediffpageobject;
+
+import java.sql.Driver;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+public class CreateRediffAccount {
+	WebDriver driver; //It is Global variable
+	//1.page object or page Repository
+	@FindBy(tagName = "input")
+	private WebElement FullName;
+	@FindBy(xpath = "//td/input[@maxlength='30']")
+	private WebElement ChooseRediffmailID;
+	@FindBy(xpath ="//input[@class='btn_checkavail']")
+	private WebElement CheckAvailability;
+	@FindBy(id = "radio_login")
+	private WebElement AvailId;
+	@FindBy(id = "newpasswd")
+	private WebElement Password;
+	@FindBy(id = "newpasswd1")
+	private WebElement RetypePassword;
+	@FindBy(xpath ="//input[@maxlength='100']")
+	private WebElement AlternateEmailId;
+	@FindBy(id = "mobno")
+	private WebElement MobileNumber;
+	@FindBy(xpath = "//td/select[1]/option[@value='14']")
+	private WebElement SelectDay;
+	@FindBy(xpath = "//td/select[2]/option[@value>'11']")
+	private WebElement SelectMonth;
+	@FindBy(xpath = "//td/select[3]/option[@value='1996']")
+	private WebElement SelectYear;
+	@FindBy(xpath ="//td/input[@value='f']")
+	private WebElement RadioButton;
+	@FindBy(id = "country")
+	private WebElement CountryDropDown;
+	@FindBy(xpath = "//td/select[@onchange='showothcity();fieldTrack(this);']")
+	private WebElement SelectState;
+	@FindBy(className = "captcha")
+	private WebElement captchacode;
+	
+	//2.Initialization
+	
+	public CreateRediffAccount(WebDriver driver) //It is Constructor use for initialization
+	{
+		PageFactory.initElements(driver,this);
+	}
+	//3.Action
+	public void EnterFullName()
+	{
+		FullName.sendKeys("Sudhir Kesrkar");
+	}
+	public void EnterRediffMailId()
+	{
+		ChooseRediffmailID.sendKeys("Abcd555");
+	}
+	public void ClickAvailability()
+	{
+		CheckAvailability.click();
+	}
+	public void SelectAvailId() throws Exception
+	{
+		Thread.sleep(9000);
+		AvailId.click();
+		Select ID=new Select(AvailId);
+		ID.selectByVisibleText("sudhir_kesrkar");
+	}
+	   
+	public void EnterPassword()
+	{
+		Password.sendKeys("Abcd143&c1d");
+	}
+	public void EnterRetypePassword()
+	{
+	RetypePassword.sendKeys("Abcd143&c1d");	
+	}
+	public void EnterAlternateEmailId()
+	{
+		AlternateEmailId.sendKeys("kesarkar.sudhir05@gmail.com");
+	}
+	
+	public void EnterMobileNumber()
+	{
+		MobileNumber.sendKeys("8153067995");
+	}
+	public void ClickDay()
+	{
+	SelectDay.click();
+    } 
+	public void ClickMonth()
+	{
+	SelectMonth.click();
+	}
+	public void ClickYear()
+	{
+	SelectYear.click();
+    } 
+	public void ClickRadioButton()
+	{
+		 RadioButton.click();	
+	}
+	public void clickCountry()
+	{
+		CountryDropDown.click();
+		Select county=new Select(CountryDropDown);
+		county.selectByVisibleText("India");
+	}
+	public void ClickState()
+	{
+		SelectState.click();
+		Select State=new Select(SelectState);
+		State.selectByVisibleText("Agra");
+	}
+	public void EnterCaptcha()
+	{
+		captchacode.sendKeys("WL4R");
+	}
+	//4.Bussiness Logic
+	public void VerifyCreateAccount() throws Exception
+	{
+		EnterFullName();
+		EnterRediffMailId();
+		ClickAvailability();
+		SelectAvailId();
+		EnterPassword();
+		EnterRetypePassword();
+		EnterAlternateEmailId();
+		EnterMobileNumber();
+		 ClickDay();
+		 ClickMonth();
+		 ClickYear();
+		 ClickRadioButton();
+		 clickCountry();
+		 ClickState();
+		 EnterCaptcha();
+		
+		
+	}
+
+}

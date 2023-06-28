@@ -1,0 +1,75 @@
+package selenium.practice;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.server.handler.interactions.MouseMoveToLocation;
+
+import net.bytebuddy.matcher.MethodOverrideMatcher;
+
+public class MyPracticeMousehover {
+
+	public static void main(String[] args) throws Exception {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://msrtc.maharashtra.gov.in/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		 
+		Thread.sleep(3000);
+		
+	WebElement	lang = driver.findElement(By.linkText("English"));
+		lang.click();
+		
+		
+		//{
+			//System.out.println("Application converted into Marathi Langauge to the English Langauge" +lang.getText());
+	//	}
+
+		Thread.sleep(3000);
+	WebElement	service=driver.findElement(By.linkText("Services"));
+	
+	Actions act=new Actions(driver);
+	
+	act.moveToElement(service).build().perform();
+	
+List<WebElement> serviceList=driver.findElements(By.xpath("//ul[@class='sub']/li"));
+    
+    {
+	  System.out.println("Total Number of Value in Service" + serviceList.size());
+	  
+	}
+
+    
+    for(int i=0; i<serviceList.size(); i++)
+    
+    {
+    	System.out.println("Value in Service List I is :" + i +" : "+ serviceList.get(i).getText());
+    
+  
+    
+    if(serviceList.get(i).getText().equalsIgnoreCase("Air Conditioned bus Service"));
+    		
+    {
+    	Thread.sleep(3000);
+    	Actions act1=new Actions(driver);
+    	
+    	act1.moveToElement(service).build().perform();
+    	
+    
+    	
+    	System.out.println(serviceList.get(i).getText() + "Is Selected");
+    	break;
+    	}
+    		
+    }
+
+	}
+
+}

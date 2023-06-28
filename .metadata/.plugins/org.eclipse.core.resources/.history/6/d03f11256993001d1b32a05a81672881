@@ -1,0 +1,32 @@
+package rediffpageobject;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+public class CreateRediffAccount {
+	WebDriver driver; //It is Global variable
+	//1.page object or page Repository
+	@FindBy(name = "namec53af274")
+	private WebElement FullName;
+	//2.Initialization
+	public CreateRediffAccount(WebDriver driver) //It is Constructor use for initialization
+	{
+		PageFactory.initElements(driver,this);
+	}
+	//3.Action
+	public void EnterFullName()
+	{
+		FullName.sendKeys("Sudhir Kesrkar");
+	}
+	
+	
+	//4.Bussiness Logic
+	public void VerifyCreateAccount()
+	{
+		EnterFullName();
+	}
+
+}

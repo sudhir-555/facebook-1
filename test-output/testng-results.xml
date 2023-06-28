@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-30T23:26:27 IST" name="Default suite" finished-at="2023-01-30T23:33:14 IST" duration-ms="407860">
+    <groups>
+    </groups>
+    <test started-at="2023-01-30T23:26:27 IST" name="Default test" finished-at="2023-01-30T23:33:14 IST" duration-ms="407860">
+      <class name="com.Facebook1.testcases.VerifyLoginTest">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:26:29 IST" name="init" finished-at="2023-01-30T23:30:44 IST" duration-ms="255237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="VerifyLoginfb(java.lang.String,java.lang.String)[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:30:44 IST" name="VerifyLoginfb" data-provider="getData" finished-at="2023-01-30T23:31:20 IST" duration-ms="36458" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kesar@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[KESR@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginfb -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:31:20 IST" name="tearDown" finished-at="2023-01-30T23:31:20 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="init()[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:31:20 IST" name="init" finished-at="2023-01-30T23:33:08 IST" duration-ms="107364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="VerifyLoginfb(java.lang.String,java.lang.String)[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:33:08 IST" name="VerifyLoginfb" data-provider="getData" finished-at="2023-01-30T23:33:14 IST" duration-ms="6617" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pqrst@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PQRS@455]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginfb -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Facebook1.testcases.VerifyLoginTest@71a8adcf]" started-at="2023-01-30T23:33:14 IST" name="tearDown" finished-at="2023-01-30T23:33:14 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Facebook1.testcases.VerifyLoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

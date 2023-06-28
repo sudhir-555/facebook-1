@@ -1,0 +1,122 @@
+package selenium.practice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.server.handler.SendKeys;
+
+public class PracticeRadioButtons {
+
+	private static int i=0;
+
+	public static void main(String[] args) throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		//Create New Account
+		
+		driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+		 
+		
+		
+		//Sign up page
+		
+		
+		
+		//First Name
+		Thread.sleep(3000);
+		
+		 driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Sudhir");
+		 
+		 //Surname
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Kesarkar");
+		 
+		 //Mobile Number
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("8153067995");
+		 
+		 //New Password
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@name='reg_passwd__']")).sendKeys("Abcd@123");
+		 
+		 Thread.sleep(3000);
+		
+	List<WebElement> radioButtonList=driver.findElements(By.xpath("//label[@class='_58mt']"));
+	
+	System.out.println("Total Number of Radio buttons:"   + radioButtonList.size()); //size() method use for the count
+	
+	for (int i=0; i<radioButtonList.size(); i++ )
+	{
+		System.out.println("Value of Radio Button I is :" + i + " : " + radioButtonList.get(i).getText());
+		
+	
+	
+		Thread.sleep(3000);
+    
+	if(radioButtonList.get(i).getText().equalsIgnoreCase("Female"))
+		
+	{
+		radioButtonList.get(i).click();
+		
+     System.out.println(radioButtonList.get(i).getText() + ": Radio Button Selected");
+     
+	}
+	
+	
+	Thread.sleep(3000);
+	
+if(radioButtonList.get(i).getText().equalsIgnoreCase("Male"))
+		
+	{
+		radioButtonList.get(i).click();
+		
+     System.out.println(radioButtonList.get(i).getText() + ": Radio Button Selected");
+     
+    }
+	
+	
+     Thread.sleep(3000);
+    
+if(radioButtonList.get(i).getText().equalsIgnoreCase("Custom"))
+		
+	{
+		radioButtonList.get(i).click();
+		
+     System.out.println(radioButtonList.get(i).getText() + ": Radio Button Selected");
+     break;
+	}
+	
+	else
+	
+	{
+	System.out.println("***Option Not Prsent***");
+	}
+
+
+       //Select your Pronoun
+
+      List<WebElement> ProNounsList=driver.findElements(By.xpath("//select[@aria-label='aria-label']"));
+     
+     System.out.println("Total Number of Drop Down List ="+ ProNounsList.size());
+      
+	}
+	
+	}
+
+}

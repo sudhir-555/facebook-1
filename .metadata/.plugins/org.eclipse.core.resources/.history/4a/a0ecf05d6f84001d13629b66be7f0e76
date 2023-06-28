@@ -1,0 +1,39 @@
+package selenium.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.server.handler.SendKeys;
+
+public class Myextrawork {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		driver.getTitle();
+		System.out.println("Title of the Application :" +driver.getTitle());
+		
+		//Email address
+		
+		driver.findElement(By.id("email")).sendKeys("kesarkar.sudhir51@gmail.com");
+		
+		//Password
+		
+		driver.findElement(By.name("pass")).sendKeys("Abcd@143");
+	
+		//Login
+		
+		driver.findElement(By.name("login")).submit();
+		
+		//forgotten Password
+		
+		driver.findElement(By.linkText("Forgotten password?"));
+
+	}
+
+}

@@ -1,0 +1,49 @@
+package pageobjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import net.bytebuddy.asm.Advice.This;
+
+public class PO_LoginPage {
+	
+	WebDriver driver; //Global Variable
+	
+	//1.Page Object or Object Repository
+	@FindBy(id = "email")
+	private WebElement emailid;
+	
+	@FindBy(id ="pass")
+	private WebElement passwd;
+	
+	//2.Initialization
+	
+	public  PO_LoginPage(WebDriver driver)
+	{
+		PageFactory.initElements(driver,this.driver);
+	}
+	
+	
+	//3.Action
+	
+	public void enterEmailId()
+	{
+		emailid.sendKeys("kesarkar.sudhir51@gmail.com");
+	}
+	
+	public void enterPasswd()
+	{
+		passwd.sendKeys("Abcd&1245");
+	}
+	//4.Bussiness Logic
+	
+	public void VerifyLogin()
+	{
+		enterEmailId();
+		enterPasswd();
+		
+	}
+
+}

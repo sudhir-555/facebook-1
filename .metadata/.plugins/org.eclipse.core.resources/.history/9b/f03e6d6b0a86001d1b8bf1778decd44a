@@ -1,0 +1,120 @@
+package selenium.practice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDownTask {
+
+	public static void main(String[] args) throws Exception {
+	
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		//Create New Account
+		
+		driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+		
+		Thread.sleep(3000);
+		// Select Drop Down 
+	WebElement	Day=driver.findElement(By.id("day"));
+	
+       //Select class: If class name is select then we can use select class
+	
+	Select Day1=new Select(Day);
+	
+   List<WebElement> DayList=driver.findElements(By.xpath("//select[@id='day']/option"));
+	
+	System.out.println("Total Number of Value :" +DayList.size());
+	
+	for(int i = 0; i<DayList.size(); i++)
+		
+	{
+		System.out.println(" Day Value is " + DayList.get(i).getText());
+		
+	if(DayList.get(i).getText().equalsIgnoreCase("29"))
+		
+	{
+		DayList.get(i).click();
+		System.out.println("Day is Selected :" + DayList.get(i).getText());
+		
+		break;
+	}
+	
+	}
+	
+	
+	//for Month
+	Thread.sleep(3000);
+	
+	WebElement	Month=driver.findElement(By.id("month"));
+	
+    //Select class: If class name is select then we can use select class
+	
+	Select Month1=new Select(Month);
+	
+List<WebElement> Monthlist=driver.findElements(By.xpath("//select[@id='month']/option"));
+	
+	System.out.println("Total Number of Value :" +Monthlist.size());
+	
+	for(int i1 = 0; i1<Monthlist.size(); i1++)
+		
+	{
+		System.out.println(" Month Value is " + Monthlist.get(i1).getText());
+		
+	if(Monthlist.get(i1).getText().equalsIgnoreCase("jul"))
+		
+	{
+		Monthlist.get(i1).click();
+		System.out.println("Month is Selected :" + Monthlist.get(i1).getText());
+		
+		break;
+	}
+	
+	
+	  
+	}
+	
+	Thread.sleep(3000);
+	
+     WebElement	Year=driver.findElement(By.id("year"));
+
+     Select Year1=new Select(Year);
+     
+ 	
+     List<WebElement> Yearlist=driver.findElements(By.xpath("//select[@id='year']/option"));
+     	
+     	System.out.println("Total Number of Value :" + Yearlist.size());
+     	
+     	
+		for(int i2 = 0; i2<Yearlist.size(); i2++)
+     		
+     	{
+     		System.out.println(" Year Value is " + Yearlist.get(i2).getText());
+     		
+     		
+     	if(Yearlist.get(i2).getText().equalsIgnoreCase("2019"))
+     	
+     
+     		Yearlist.get(i2).click();
+     		System.out.println("Year is Selected :" + Yearlist.get(i2).getText());
+     		  
+     		break;
+     	}
+     	
+     	
+     
+     
+     
+
+	}
+
+}

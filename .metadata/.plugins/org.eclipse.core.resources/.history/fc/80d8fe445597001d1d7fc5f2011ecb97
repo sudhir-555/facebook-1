@@ -1,0 +1,46 @@
+package com.Facebook1.objectpage;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class PO_Facebook1LoginPage extends Facebook1basepage {
+	WebDriver driver;
+	//page object or Repository
+	@FindBy(id = "email")
+	private WebElement EmailId;
+	@FindBy(id = "pass")
+	private WebElement Password;
+	@FindBy(id = "u_0_5_h+")
+	private WebElement Login;
+	
+	//insitialization
+	public PO_Facebook1LoginPage(WebDriver driver)
+	{
+		PageFactory.initElements(driver,this);
+	}
+	//Action
+	
+	public void EnterEmailId()
+	{
+	EmailId.sendKeys("UserName");
+	}
+	public void EnterPasswd()
+	{
+		Password.sendKeys("Password");
+	}
+	public void ClickLogin()
+	{
+		Login.click();
+	}
+	//Bussiness Logic
+	public void VerifyLogin()
+	{
+		EnterEmailId();
+		EnterPasswd();
+		ClickLogin();
+	}
+	
+
+}

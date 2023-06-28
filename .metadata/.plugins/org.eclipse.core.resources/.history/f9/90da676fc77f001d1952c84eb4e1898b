@@ -1,0 +1,52 @@
+package selenium.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locator {
+
+	public static void main(String[] args) {
+		
+		//Q. What is Webelement?
+		//Q. What is Locator?
+		
+		//Web element :  anything can be displayed on the web page it is called as Web element.
+		 //ex. text box ,radio buttons, buttons , check box , text box , text , Lebels etc.
+	
+		/*Locator : To Locate the web element it is  called as Locator.
+		 * 
+		 * There are 8 type of Locator in selenium
+		 * 1.id
+		 * 2.name
+		 * 3.linkText
+		 * 4.partial linkText
+		 * 5.xpath
+		 * 6.cssSelctor
+		 * 7.tagName
+		 * 8.className
+		 */
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().deleteAllCookies();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//Locator id
+		
+		WebElement email = driver.findElement(By.id(""));
+		
+		//Q. How to inspect element?
+		//Q.How to open DOM(Document Object Model)
+		
+		//1.Right click on webpage > Click on inspect
+		//2.press F12 key
+	
+
+	}
+
+}

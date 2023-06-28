@@ -1,0 +1,35 @@
+package com.rediff.testcases;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.rediff.basepage.basepage;
+import com.rediff.pageobject.CreatAccountPage;
+import com.rediff.pageobject.LoginPage;
+
+public class RediffTestcase extends basepage {
+	
+	@BeforeMethod
+	public void init() throws Exception
+	{
+		Initialization();
+	}
+@Test(description = "verify create Account")
+public void VerifyCreatAccount()
+{
+	CreatAccountPage CA=new CreatAccountPage();
+			CA.VerifyCreatAccount();
+	
+	}
+@Test(description = "Login Page")
+public void  VerifyLoginRediff() throws Exception
+{
+	LoginPage LPg=new LoginPage(driver);
+			LPg.VerifyLoginRediff();
+	}
+@BeforeMethod
+public void tearDown()
+{
+	driver.close();
+	}
+}

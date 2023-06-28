@@ -1,0 +1,79 @@
+package selenium.practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locator {
+
+	public static void main(String[] args) {
+		
+		//Q. What is Webelement?
+		//Q. What is Locator?
+		
+		//Web element :  anything can be displayed on the web page it is called as Web element.
+		 //ex. text box ,radio buttons, buttons , check box , text box , text , Lebels etc.
+	
+		/*Locator : To Locate the web element it is  called as Locator.
+		 * 
+		 * There are 8 type of Locator in selenium
+		 * 1.id
+		 * 2.name
+		 * 3.linkText
+		 * 4.partial linkText
+		 * 5.xpath
+		 * 6.cssSelctor
+		 * 7.tagName
+		 * 8.className
+		 */
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.manage().deleteAllCookies();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//Q. How to inspect element?
+		//Q.How to open DOM(Document Object Model)
+		
+		//1.Right click on webpage > Click on inspect
+		//2.press F12 key
+	
+		/*DOM Structure?
+		 * 
+		 * < - Open tag
+		 * > - Close tag
+		 * The text showing in purple color it is called as tagName 
+		 * The text showing in brown color it is called as Attribute Name
+		 * The text showing in double quotes with blue color it is called as Attribute Value.
+		 */
+		//Locator id
+		
+				WebElement email; // Declaring a Local Variable 
+				email = driver.findElement(By.id("email"));
+				email.sendKeys("Test@gmail.com");
+				
+				WebElement passwd;
+				passwd  = driver.findElement(By.id("pass"));
+				passwd.sendKeys("Test@1234");
+				
+				WebElement loginbutton;
+				loginbutton =driver.findElement(By.name("login"));
+				loginbutton.click();
+				
+				/*webElement : It is return type 
+				 * email : Its is variable name
+				 * driver : Reference name
+				 * findElement() : It is method used for find the element 
+				 * by: it is class
+				 * sendKey() : it is a method to used for provide input to text box 
+				 * click() : It is method to performed click action 
+ 				 */
+				
+
+	}
+
+}

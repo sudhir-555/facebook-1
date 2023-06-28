@@ -1,0 +1,71 @@
+	package selenium.practice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDownHandling {
+
+	public static void main(String[] args) throws Exception {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		//Create New Account
+		
+		driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+		
+		Thread.sleep(3000);
+		// Select Drop Down 
+	WebElement	Day=driver.findElement(By.id("day"));
+	
+       //Select class: If class name is select then we can use select class
+	
+	Select Day1=new Select(Day);
+	
+	//1. Method or 1st way...
+	
+	  Day1.selectByIndex(14); //It is Method
+	  
+	//2. Method 2nd way...
+	  
+	  Day1.selectByValue("15");
+	  
+	//3. Method 3rd way...
+	  
+	  Day1.selectByVisibleText("15");
+	  
+	  
+	  
+	List<WebElement> DayList=driver.findElements(By.xpath("//select[@id='day']/option"));
+	
+	System.out.println("Total Number of Value :" +DayList.size());
+	
+	for(int i = 0; i<DayList.size(); i++)
+		
+	{
+		System.out.println(" Day Value is " + DayList.get(i).getText());
+		
+	if(DayList.get(i).getText().equalsIgnoreCase("15"))
+		
+	{
+		DayList.get(i).click();
+		System.out.println("Day is Selected :" + DayList.get(i).getText());
+		
+		break;
+	}
+	
+	  
+	  
+	}
+	}
+
+}

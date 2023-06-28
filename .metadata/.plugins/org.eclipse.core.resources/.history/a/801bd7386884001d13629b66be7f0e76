@@ -1,0 +1,23 @@
+package selenium.practice;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Myextrawork {
+
+	public static void main(String[] args) {
+		System.setProperty("WebDriver.Chrome.driver",  "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		driver.getTitle();
+		System.out.println("Title of The Application : " + driver.getTitle());
+		
+
+	}
+
+}

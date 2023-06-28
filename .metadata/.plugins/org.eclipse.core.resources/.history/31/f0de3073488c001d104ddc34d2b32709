@@ -1,0 +1,36 @@
+package selenium.practice;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class FbLogin {
+	
+	WebDriver driver;
+
+	
+	@BeforeMethod
+	public void init()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kesar\\Downloads\\Software Testing\\chromedriver_win32 (1)\\chromedriver.exe");
+	    driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+	}
+	
+	@Test
+	public void VerifyLogin()
+	
+	{
+	     driver.findElement(By.id("email")).sendKeys("Sudhi123r@Test.com");
+	
+		 driver.findElement(By.id("pass")).sendKeys("Abcd&1234");
+	}
+
+}
